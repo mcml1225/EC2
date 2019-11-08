@@ -1,15 +1,16 @@
 import pandas as pd
 import dash
-#import dpip as dcc
+import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objects as go
+import psycopg2
+import dash_table
 
-df = pd.read_csv('extended_case_4_student\aggr.csv', parse_dates=['Entry time'])
+df = pd.read_csv('aggr.csv', parse_dates=['Entry time'])
 
 app = dash.Dash(__name__, external_stylesheets=['https://codepen.io/uditagarwal/pen/oNvwKNP.css', 'https://codepen.io/uditagarwal/pen/YzKbqyV.css'])
 
-if __name__ == "__main__":
-    app.run_server(debug=True)
+
 
 
 
@@ -49,4 +50,6 @@ app.layout = html.Div(children=[
     ])        
 ])
 
-app.run_server(debug=True)
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
